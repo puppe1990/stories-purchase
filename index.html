@@ -1,0 +1,89 @@
+<style type="text/css">img {
+   max-width: 100%;
+   display: block;
+   }
+   .slide {
+   max-width: 380px;
+   margin: 20px auto;
+   display: grid;
+   box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.4);
+   }
+   .slide-items {
+   position: relative;
+   grid-area: 1/1;
+   border-radius: 5px;
+   overflow: hidden;
+   }
+   .slide-nav {
+   grid-area: 1/1;
+   z-index: 1;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: auto 1fr;
+   }
+   .slide-nav button {
+   -webkit-appearance: none;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   opacity: 0;
+   }
+   .slide-items > * {
+   position: absolute;
+   top: 0px;
+   opacity: 0;
+   pointer-events: none;
+   }
+   .slide-items > .active {
+   position: relative;
+   opacity: 1;
+   pointer-events: initial;
+   }
+   .slide-thumb {
+   display: flex;
+   grid-column: 1 / 3;
+   }
+   .slide-thumb > span {
+   flex: 1;
+   display: block;
+   height: 3px;
+   background: rgba(0, 0, 0, 0.4);
+   margin: 5px;
+   border-radius: 3px;
+   overflow: hidden;
+   }
+   .slide-thumb > span.active::after {
+   content: '';
+   display: block;
+   height: inherit;
+   background: rgba(255, 255, 255, 0.9);
+   border-radius: 3px;
+   transform: translateX(-100%);
+   animation: thumb 5s forwards linear;
+   }
+   @keyframes thumb {
+   to {
+   transform: initial;
+   }
+   }
+</style>
+<p style="text-align: center;">Veja alguns prints de clientes:</p>
+<p style="text-align: center;">&nbsp;</p>
+<div class="slide" data-slide="slide">
+   <div class="slide-items">
+      <img alt="Img 1" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048171234728.jpeg" /> 
+      <img alt="Img 2" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048170556797.jpeg" />
+      <img alt="Img 3" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048170634207.jpeg" />
+      <img alt="Img 4" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048170930205.jpeg" />
+      <img alt="Img 5" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048171046546.jpeg" /> 
+      <img alt="Img 6" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048171491559.jpeg" /> 
+      <img alt="Img 7" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048171766386.jpeg" /> 
+      <img alt="Img 8" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048171973135.jpeg" /> 
+      <img alt="Img 9" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048172154873.jpeg" /> 
+      <img alt="Img 10" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048172538247.jpeg" /> 
+      <img alt="Img 11" src="https://17741.cdn.simplo7.net/static/17741/galeria/160048172721077.jpeg" />
+   </div>
+   <nav class="slide-nav">
+      <div class="slide-thumb">&nbsp;</div>
+      <button class="slide-prev">Prev</button><button class="slide-next">Next</button>
+   </nav>
+</div>
+<script src="https://www.cssscript.com/demo/instagram-photo-slideshow-stories/slide-stories.js"></script>
